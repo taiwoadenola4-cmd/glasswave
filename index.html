@@ -47,16 +47,27 @@ type="video/mp4">
 Your browser does not support video.
 </video>
 <div class="episodes">
-<button class="ep active" onclick="switchVideo('https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4','Ep 12 - Lagos After Dark',this)"><span class="badge">EP 12</span><br><br><b>Lagos After Dark</b><small>Taiwo Adenola - Video Podcast</small></button>
-<button class="ep" onclick="switchVideo('https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4','Ep 11 - Hustle & Soft Life',this)"><span class="badge">EP 11</span><br><br><b>Hustle & Soft Life</b><small>Taiwo Adenola - Video Podcast</small></button>
-<button class="ep" onclick="switchVideo('https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4','Ep 10 - Music That Heals',this)"><span class="badge">EP 10</span><br><br><b>Music That Heals</b><small>Taiwo Adenola - Video Podcast</small></button>
+<button class="ep active" onclick="playEp('EP12',this)">EP 12 - Lagos After Dark</button>
+<button class="ep" onclick="playEp('EP11',this)">EP 11 - Hustle & Soft Life</button>
+<button class="ep" onclick="playEp('EP10',this)">EP 10 - Music That Heals</button>
 </div>
 </main>
 <footer>GLASSWAVE - Video.js v10 Skin - Built for Contra Challenge</footer>
 <script src="https://cdn.jsdelivr.net/npm/@videojs/player@10/dist/video-js.min.js"></script>
 <script>
-const player = videojs('glasswave-player');
-function switchVideo(src,title,btn){player.src({src:src,type:'video/mp4'});player.play();document.querySelector('h1').innerHTML=title+' <span>- Glasswave</span>';document.querySelectorAll('.ep').forEach(e=>e.classList.remove('active'));if(btn)btn.classList.add('active');}
+const videos = {
+EP12: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+EP11: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+EP10: "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+};
+function playEp(id,btn){
+var v = document.getElementById('glasswave-player');
+v.src = videos[id];
+v.load();
+v.play();
+document.querySelectorAll('.ep').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+}
 document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='BUTTON'){e.preventDefault();player.paused()?player.play():player.pause();}if(e.key==='ArrowRight')player.currentTime(player.currentTime()+10);if(e.key==='ArrowLeft')player.currentTime(player.currentTime()-10);if(e.key==='f'||e.key==='F')player.requestFullscreen();if(e.key==='m'||e.key==='M')player.muted(!player.muted());});
 </script>
 </body>
