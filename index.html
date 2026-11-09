@@ -52,13 +52,12 @@ Your browser does not support video.
 <button class="ep" onclick="playEp('EP10',this)">EP 10 - Music That Heals</button>
 </div>
 </main>
-<footer>GLASSWAVE - Video.js v10 Skin - Built for Contra Challenge</footer>
-<script src="https://cdn.jsdelivr.net/npm/@videojs/player@10/dist/video-js.min.js"></script>
+<footer>GLASSWAVE - Built for Contra Challenge</footer>
 <script>
 const videos = {
 EP12: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
-"https://www.w3schools.com/html/mov_bbb.mp4",
-"https://www.w3schools.com/html/movie.mp4"
+EP11: "https://www.w3schools.com/html/mov_bbb.mp4",
+EP10: "https://www.w3schools.com/html/movie.mp4"
 };
 function playEp(id,btn){
 var v = document.getElementById('glasswave-player');
@@ -68,7 +67,6 @@ v.play();
 document.querySelectorAll('.ep').forEach(b=>b.classList.remove('active'));
 btn.classList.add('active');
 }
-document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='BUTTON'){e.preventDefault();player.paused()?player.play():player.pause();}if(e.key==='ArrowRight')player.currentTime(player.currentTime()+10);if(e.key==='ArrowLeft')player.currentTime(player.currentTime()-10);if(e.key==='f'||e.key==='F')player.requestFullscreen();if(e.key==='m'||e.key==='M')player.muted(!player.muted());});
 </script>
 </body>
 </html>
