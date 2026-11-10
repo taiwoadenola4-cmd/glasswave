@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GLASSWAVE - Video.js v10 Skin</title>
-<link href="https://cdn.jsdelivr.net/npm/@videojs/player@10/dist/video-js.min.css" rel="stylesheet">
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,Arial;background:#080810;color:#fff}
-header{padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-weight:900;letter-spacing:2px;font-size:22px}
-.logo span{color:#a78bfa}
-.live{background:#ff2d55;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700}
-main{max-width:1000px;margin:0 auto;padding:10px 16px 40px}
-h1{font-size:30px;margin:10px 0 4px}
-h1 span{color:#a78bfa}
-p.sub{color:#c7c7d1;margin:0 0 16px}
-.video-js{width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000}
-.video-js .vjs-big-play-button{width:84px!important;height:84px!important;border-radius:50%!important;background:rgba(255,255,255,.18)!important;border:1px solid rgba(255,255,255,.5)!important;backdrop-filter:blur(12px);top:50%!important;left:50%!important;transform:translate(-50%,-50%);margin:0!important;line-height:84px!important;font-size:36px!important}
-.video-js .vjs-control-bar{background:linear-gradient(transparent,rgba(0,0,0,.75))!important;backdrop-filter:blur(10px);height:64px!important;padding:0 10px}
-.video-js .vjs-play-progress,video-js .vjs-volume-level{background:#a78bfa!important}
-.video-js button{color:#fff!important;min-width:44px;min-height:44px}
-.video-js button:focus-visible{outline:3px solid #fff}
-.episodes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:18px}
-@media(max-width:650px){.episodes{grid-template-columns:1fr}h1{font-size:26px}}
-.ep{background:#161624;border:1px solid #2a2a3d;border-radius:16px;padding:14px;cursor:pointer;text-align:left;color:#fff}
-.ep.active{border-color:#a78bfa;background:#241f3d}
-.ep small{color:#bdbdc9;display:block;margin-top:6px}
-.badge{font-size:11px;background:#a78bfa;color:#000;padding:3px 8px;border-radius:20px;font-weight:800}
-footer{text-align:center;color:#888;font-size:12px;padding:20px}
-</style>
-</head>
-<body>
-<header><div class="logo">GLASS<span>WAVE</span></div><div class="live">● LIVE</div></header>
-<main>
-<h1>The Glass Hour <span>- Lagos After Dark</span></h1>
-<p class="sub">A custom Video.js v10 skin. Glass controls, built for bright & dark video, keyboard & touch.</p>
-<video id="glasswave-player"
-controls
-preload="auto"
-playsinline
-style="width:100%; background:#000;">
+-gradient(transparent,rgba(0,0,0,.75))!important;backdrop-filter:blur(10px);height:64px!important;padding:0background:#000;">
 <source
 src="https://media.w3.org/2010/05/sintel/trailer.mp4"
 type="video/mp4">
@@ -61,10 +19,7 @@ EP10: "https://www.w3schools.com/html/movie.mp4"
 };
 function playEp(id,btn){
 var v = document.getElementById('glasswave-player');
-v.src = videos[id];
-v.load();
-v.play();
-document.querySelectorAll('.ep').forEach(b=>b.classList.remove('active'));
+
 btn.classList.add('active');
 }
 </script>
